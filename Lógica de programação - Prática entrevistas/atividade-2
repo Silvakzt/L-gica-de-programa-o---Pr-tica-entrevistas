@@ -1,0 +1,89 @@
+'''
+# Solicita ao usuário a quantidade de termos da sequência
+quantidade_termos = int(input("Digite a quantidade de termos: "))
+
+# Define os dois primeiros termos da sequência
+primeiro_termo = 0
+segundo_termo = 1
+
+# Exibe os termos da sequência
+for contador_termos in range(quantidade_termos):
+    print(primeiro_termo)
+
+    proximo_termo = primeiro_termo + segundo_termo
+    primeiro_termo = segundo_termo
+    segundo_termo = proximo_termo
+'''
+'''
+# Função que verifica se um número é primo
+def verificar_primo(numero):
+    
+    # Números menores que 2 não são primos
+    if numero < 2:
+        return False
+
+    # Verifica se o número possui divisores além de 1 e dele mesmo
+    for divisor in range(2, numero):
+        if numero % divisor == 0:
+            return False
+
+    return True
+
+# Solicita um número ao usuário
+numero = int(input("Digite um número inteiro: "))
+
+# Exibe o resultado da verificação
+if verificar_primo(numero):
+    print("O número é primo.")
+else:
+    print("O número não é primo.")
+'''
+'''
+# Solicita um número inteiro ao usuário
+numero = int(input("Digite um número inteiro: "))
+
+# Variável que armazenará a soma dos dígitos
+soma_digitos = 0
+
+# Percorre cada dígito do número
+for digito in str(numero):
+    soma_digitos += int(digito)
+
+# Exibe o resultado
+print("A soma dos dígitos é:", soma_digitos)
+'''
+'''
+# Solicita o ano ao usuário
+ano = int(input("Digite um ano: "))
+
+# Verifica as regras do calendário gregoriano
+if (ano % 4 == 0 and ano % 100 != 0) or (ano % 400 == 0):
+    print("O ano é bissexto.")
+else:
+    print("O ano não é bissexto.")
+'''
+
+# Solicita o tipo de conversão
+tipo_conversao = input(
+    "Digite C para Celsius -> Fahrenheit ou F para Fahrenheit -> Celsius: "
+).upper()
+
+# Conversão de Celsius para Fahrenheit
+if tipo_conversao == "C":
+    temperatura_celsius = float(input("Digite a temperatura em Celsius: "))
+    
+    temperatura_fahrenheit = (temperatura_celsius * 9 / 5) + 32
+    
+    print("Temperatura em Fahrenheit:", temperatura_fahrenheit)
+
+# Conversão de Fahrenheit para Celsius
+elif tipo_conversao == "F":
+    temperatura_fahrenheit = float(input("Digite a temperatura em Fahrenheit: "))
+    
+    temperatura_celsius = (temperatura_fahrenheit - 32) * 5 / 9
+    
+    print("Temperatura em Celsius:", temperatura_celsius)
+
+# Opção inválida
+else:
+    print("Opção de conversão inválida.")
